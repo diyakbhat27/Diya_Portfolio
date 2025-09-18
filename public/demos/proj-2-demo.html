@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frugal Foodie Demo - Restaurant Clustering - Diya K Bhat</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #0c0c0c, #1a1a1a);
+            color: #ffffff;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+        }
+        
+        .search-container {
+            background: #1f2937;
+            padding: 30px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            border: 2px solid #374151;
+        }
+        
+        .search-form {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr auto;
+            gap: 15px;
+            align-items: end;
+        }
+        
+        .form-group label {
+            display: block;
+            color: #9ca3af;
+            margin-bottom: 5px;
+            font-size: 0.9rem;
+        }
+        
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #374151;
+            border-radius: 8px;
+            background: #111827;
+            color: white;
+            font-size: 1rem;
+        }
+        
+        .search-btn {
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            height: fit-content;
+            transition: transform 0.2s;
+        }
+        
+        .search-btn:hover {
+            transform: scale(1.05);
+        }
+        
+        .results-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+        
+        .cluster-results {
+            background: #1f2937;
+            padding: 20px;
+            border-radius: 12px;
+            border: 2px solid #374151;
+        }
+        
+        .restaurant-card {
+            background: #111827;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            border-left: 4px solid #3b82f6;
+        }
+        
+        .restaurant-card h4 {
+            color: #3b82f6;
+            margin-bottom: 8px;
+        }
+        
+        .restaurant-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        
+        .price-range {
+            background: #064e3b;
+            color: #10b981;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+        }
+        
+        .rating {
+            color: #fbbf24;
+        }
+        
+        .cluster-stats {
+            background: #1f2937;
+            padding: 20px;
+            border-radius: 12px;
+            border: 2px solid #374151;
+        }
+        
+        .stat-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid #374151;
+        }
+        
+        .stat-value {
+            color: #10b981;
+            font-weight: bold;
+        }
+        
+        .cluster-indicator {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: 10px;
+            background: #3b82f6;
+        }
+        
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: #6b7280;
+        }
+        
+        @media (max-width: 768px) {
+            .search-form {
+                grid-template-columns: 1fr;
+            }
+            
+            .results-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Frugal Foodie</h1>
+            <p>K-Means Clustering for Budget-Friendly Restaurant Recommendations</p>
+        </div>
+        
+        <div class="search-container">
+            <div class="search-form">
+                <div class="form-group">
+                    <label>Location</label>
+                    <input type="text" id="location" placeholder="Bengaluru, India" value="Bengaluru">
+                </div>
+                <div class="form-group">
+                    <label>Budget Range</label>
+                    <select id="budget">
+                        <option value="low">₹ - Budget Friendly</option>
+                        <option value="medium" selected>₹₹ - Moderate</option>
+                        <option value="high">₹₹₹ - Premium</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Cuisine Type</label>
+                    <select id="cuisine">
+                        <option value="all">All Cuisines</option>
+                        <option value="indian">Indian</option>
+                        <option value="chinese">Chinese</option>
+                        <option value="continental">Continental</option>
+                    </select>
+                </div>
+                <button class="search-btn" onclick="searchRestaurants()">Find Restaurants</button>
+            </div>
+        </div>
+        
+        <div class="results-container" id="results" style="display: none;">
+            <div class="cluster-results">
+                <h3 style="margin-bottom: 20px;">
+                    <span class="cluster-indicator"></span>
+                    Best Value Restaurants
+                </h3>
+                <div id="cluster1"></div>
+            </div>
+            
+            <div class="cluster-stats">
+                <h3 style="margin-bottom: 20px;">Clustering Analysis</h3>
+                <div class="stat-item">
+                    <span>Silhouette Score:</span>
+                    <span class="stat-value">0.6</span>
+                </div>
+                <div class="stat-item">
+                    <span>Total Restaurants Analyzed:</span>
+                    <span class="stat-value" id="total-restaurants">247</span>
+                </div>
+                <div class="stat-item">
+                    <span>Clusters Generated:</span>
+                    <span class="stat-value">3</span>
+                </div>
+                <div class="stat-item">
+                    <span>Average Cost Savings:</span>
+                    <span class="stat-value">₹127</span>
+                </div>
+                <div class="stat-item">
+                    <span>Processing Time:</span>
+                    <span class="stat-value" id="processing-time">0.23s</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="results-container" id="loading" style="display: none;">
+            <div class="loading">
+                <h3>🔍 Analyzing restaurants with K-Means clustering...</h3>
+                <p>Processing location data and optimizing cost recommendations</p>
+            </div>
+        </div>
+        
+        <div style="text-align: center; margin-top: 40px; color: #6b7280;">
+            <p>Demo showcasing K-Means clustering algorithm for restaurant recommendation</p>
+            <p>Integration with Google Maps API for real-time location data</p>
+        </div>
+    </div>
+
+    <script>
+        const sampleRestaurants = [
+            {
+                name: "Spice Garden",
+                cuisine: "Indian",
+                price: "₹₹",
+                rating: 4.2,
+                distance: "0.8 km",
+                avgCost: "₹350 for two"
+            },
+            {
+                name: "Dragon Bowl",
+                cuisine: "Chinese", 
+                price: "₹₹",
+                rating: 4.0,
+                distance: "1.2 km",
+                avgCost: "₹280 for two"
+            },
+            {
+                name: "Pasta Corner",
+                cuisine: "Continental",
+                price: "₹₹",
+                rating: 4.1,
+                distance: "1.5 km", 
+                avgCost: "₹320 for two"
+            }
+        ];
+        
+        function searchRestaurants() {
+            document.getElementById('results').style.display = 'none';
+            document.getElementById('loading').style.display = 'block';
+            
+            setTimeout(() => {
+                document.getElementById('loading').style.display = 'none';
+                document.getElementById('results').style.display = 'grid';
+                
+                displayCluster();
+                updateStats();
+            }, 2000);
+        }
+        
+        function displayCluster() {
+            const container = document.getElementById('cluster1');
+            container.innerHTML = '';
+            
+            sampleRestaurants.forEach(restaurant => {
+                const card = document.createElement('div');
+                card.className = 'restaurant-card';
+                card.innerHTML = `
+                    <h4>${restaurant.name}</h4>
+                    <div class="restaurant-info">
+                        <span class="price-range">${restaurant.price}</span>
+                        <span class="rating">★ ${restaurant.rating}</span>
+                    </div>
+                    <p style="color: #9ca3af; margin-bottom: 5px;">${restaurant.cuisine}</p>
+                    <div style="display: flex; justify-content: space-between;">
+                        <span style="color: #6b7280;">${restaurant.distance}</span>
+                        <span style="color: #10b981;">${restaurant.avgCost}</span>
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+        }
+        
+        function updateStats() {
+            const totalRestaurants = Math.floor(200 + Math.random() * 100);
+            const processingTime = (Math.random() * 0.5 + 0.1).toFixed(2);
+            
+            document.getElementById('total-restaurants').textContent = totalRestaurants;
+            document.getElementById('processing-time').textContent = processingTime + 's';
+        }
+        
+        searchRestaurants();
+    </script>
+</body>
+</html>

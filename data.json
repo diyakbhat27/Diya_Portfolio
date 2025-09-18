@@ -1,0 +1,150 @@
+{
+  "profile": {
+    "fullName": "Diya K Bhat",
+    "headline": "Final Year AI & ML Engineer | Data-Driven Innovator | Cloud & Computer Vision",
+    "location": "Bengaluru, India",
+    "email": "diyakbhat29012004@gmail.com",
+    "phone": "+91 9886290531",
+    "shortBio": "AI & ML engineer with expertise in Python, SQL, data science, and cloud platforms (AWS, GCP). Experienced in computer vision, predictive modeling, and building deployable AI/ML systems. Passionate about solving real-world challenges with impactful solutions.",
+    "avatar": "/assets/avatar.jpg",
+    "resumeFile": "/resume.pdf",
+    "social": {
+      "github": "https://github.com/diyakbhat27",
+      "linkedin": "https://www.linkedin.com/in/diya-k-bhat-75b450257"
+    },
+    "skills": [
+      "Python", "C", "Java", "C++", "R",
+      "SQL", "MySQL", "MongoDB",
+      "AWS", "Google Cloud",
+      "OpenAI APIs",
+      "Tableau", "Power BI",
+      "Agile", "Remote Collaboration"
+    ]
+  },
+  "projects": [
+    {
+      "id": "proj-1",
+      "title": "AI-Driven Traffic Congestion Management",
+      "type": "Computer Vision",
+      "summary": "Developed an AI-driven system with dynamic flow optimization, emergency vehicle priority, and smart pedestrian handling. Fine-tuned YOLOv8 on 4,000+ images, achieving 97.1% mAP50. Enabled real-time inference on live CCTV streams for low-latency emergency response.",
+      "tech": ["YOLOv8", "OpenCV", "Python", "Flask"],
+      "image": "/projects/traffic-system.png",
+      "repo": "https://github.com/diyakbhat27/traffic-system",
+      "features": [
+        "Real-time vehicle detection with 97.1% mAP50 accuracy",
+        "Emergency vehicle priority system with automatic lane clearing",
+        "Smart pedestrian crossing management",
+        "Multi-agent coordination between intersections",
+        "Live CCTV feed processing with <100ms latency"
+      ]
+    },
+    {
+      "id": "proj-2",
+      "title": "Frugal Foodie: Cost-Based Restaurant Clustering",
+      "type": "Machine Learning",
+      "summary": "K-Means clustering model with Google Maps API for location-based restaurant recommendations. Achieved a Silhouette Score of 0.6. Published in JETIR.",
+      "tech": ["Python", "K-Means", "Google Maps API", "FastAPI", "HTML/CSS"],
+      "repo": "http://www.jetir.org/papers/JETIR2505064.pdf",
+      "link": "https://github.com/diyakbhat27/Frugal-Foodie",
+      "image": "/projects/frugal-foodie.png",
+      "features": [
+        "K-Means clustering for restaurant grouping by cost",
+        "Google Maps API integration for location data",
+        "Silhouette Score of 0.6 for optimal clustering",
+        "FastAPI backend with responsive frontend",
+        "Published research paper in JETIR journal"
+      ]
+    },
+    {
+      "id": "proj-3",
+      "title": "AI for Pandemic Prediction",
+      "type": "Data Science",
+      "summary": "Regression model predicting pandemic potential using COVID-19 data across 150+ countries. Includes Streamlit dashboard for visualization.",
+      "tech": ["Python", "Pandas", "Streamlit"],
+      "repo": "https://github.com/diyakbhat27/AI-for-pandemic-prediction",
+      "link": "https://github.com/diyakbhat27/AI-for-pandemic-prediction",
+      "image": "/projects/pandemic-prediction.png",
+      "features": [
+        "COVID-19 data analysis across 150+ countries",
+        "Regression modeling for pandemic potential prediction",
+        "Interactive Streamlit dashboard for data visualization",
+        "Statistical analysis and trend identification",
+        "Real-time data processing and insights"
+      ]
+    },
+    {
+      "id": "proj-4",
+      "title": "Spot the Job Scam",
+      "type": "NLP & Classification",
+      "summary": "ML pipeline to detect fraudulent job postings using NLP, embeddings, and classification. Preprocessing, model training, and evaluation included.",
+      "tech": ["Python", "scikit-learn", "Pandas", "NLP"],
+      "repo": "https://github.com/diyakbhat27/spot-the-job-scam",
+      "image": "/projects/spot-job-scam.png",
+      "features": [
+        "Natural Language Processing for text analysis",
+        "Feature extraction using embeddings and TF-IDF",
+        "Binary classification for scam detection",
+        "Comprehensive data preprocessing pipeline",
+        "Model evaluation with accuracy and precision metrics"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "degree": "B.E. Artificial Intelligence & Machine Learning",
+      "institute": "Jyothy Institute of Technology, VTU",
+      "year": "2026*",
+      "details": "Aggregate: 83%"
+    },
+    {
+      "degree": "Credit-Linked Program in Data Science",
+      "institute": "Daksh Gurukul – IIT Guwahati",
+      "year": "2025*"
+    },
+    {
+      "degree": "PUC",
+      "institute": "Surana Independent College, Deeksha – Kengeri",
+      "year": "2022",
+      "details": "Aggregate: 82%"
+    },
+    {
+      "degree": "10th ICSE",
+      "institute": "Presidency School, Nandini Layout",
+      "year": "2020",
+      "details": "Aggregate: 90%"
+    }
+  ],
+  "certifications": [
+    {"title": "AWS Academy Machine Learning Foundations", "issuer": "AWS", "year": "2024", "link": "https://example.com"},
+    {"title": "AWS Academy Cloud Foundations", "issuer": "AWS", "year": "2024", "link": "https://example.com"},
+    {"title": "Google Cloud Computing Foundations", "issuer": "Google", "year": "2024", "link": "https://example.com"},
+    {"title": "Data Science with Python", "issuer": "Simplilearn", "year": "2024", "link": "https://example.com"},
+    {"title": "Data Visualization: Empowering Business with Insights", "issuer": "Tata Forage", "year": "2024", "link": "https://example.com"},
+    {"title": "Career Essentials in Generative AI", "issuer": "Microsoft & LinkedIn", "year": "2024", "link": "https://example.com"},
+    {"title": "Gemini in Google Workspace", "issuer": "Google Cloud Skills Boost", "year": "2024", "link": "https://example.com"}
+  ],
+  "publications": [
+    {
+      "title": "Frugal Foodie: A Cost-Based Restaurant Clustering",
+      "publisher": "JETIR, Vol. 12, Issue 5",
+      "date": "May 2025",
+      "link": "http://www.jetir.org/papers/JETIR2505064.pdf"
+    },
+    {
+      "title": "Conference Presentation",
+      "publisher": "11th National Conference on Advancements in Information Technology (NCAIT), JSSATE Bengaluru",
+      "date": "May 2025"
+    }
+  ],
+  "extracurriculars": [
+    {"role": "Assistant Editor", "activity": "JITIMES College Magazine"},
+    {"role": "Student Placement Coordinator", "activity": "Placement Drives at JIT"},
+    {"role": "Campus Ambassador", "activity": "GirlScript Summer of Code 2025"},
+    {"role": "Documentation Lead", "activity": "AI Nexus Club"},
+    {"role": "Social Media Lead", "activity": "HackAura Global Hackathon"}
+  ],
+  "contact": {
+    "email": "diyakbhat29012004@gmail.com",
+    "messageRecipient": "diyakbhat29012004@gmail.com"
+  }
+}

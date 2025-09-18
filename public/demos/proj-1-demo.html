@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Traffic Management Demo - Diya K Bhat</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #0c0c0c, #1a1a1a);
+            color: #ffffff;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+        }
+        
+        .demo-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .intersection {
+            background: #1f2937;
+            border-radius: 12px;
+            padding: 20px;
+            border: 2px solid #374151;
+        }
+        
+        .traffic-light {
+            width: 60px;
+            height: 180px;
+            background: #2d3748;
+            border-radius: 30px;
+            margin: 10px auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 10px 0;
+        }
+        
+        .light {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin: 5px 0;
+            transition: all 0.3s ease;
+        }
+        
+        .red { background: #ef4444; }
+        .yellow { background: #f59e0b; }
+        .green { background: #10b981; }
+        
+        .light.off {
+            opacity: 0.3;
+        }
+        
+        .controls {
+            text-align: center;
+            margin-top: 20px;
+        }
+        
+        .btn {
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            margin: 5px;
+            transition: transform 0.2s;
+        }
+        
+        .btn:hover {
+            transform: scale(1.05);
+        }
+        
+        .metrics {
+            background: #1f2937;
+            padding: 20px;
+            border-radius: 12px;
+            border: 2px solid #374151;
+        }
+        
+        .metric-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid #374151;
+        }
+        
+        .metric-value {
+            color: #10b981;
+            font-weight: bold;
+        }
+        
+        .simulation-status {
+            text-align: center;
+            margin: 20px 0;
+            padding: 15px;
+            background: #064e3b;
+            border-radius: 8px;
+            color: #10b981;
+        }
+        
+        @media (max-width: 768px) {
+            .demo-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>AI Traffic Management System</h1>
+            <p>Real-time traffic flow optimization with emergency vehicle priority</p>
+        </div>
+        
+        <div class="simulation-status" id="status">
+            System Status: AI Optimization Active
+        </div>
+        
+        <div class="demo-container">
+            <div class="intersection">
+                <h3 style="text-align: center; margin-bottom: 20px;">North-South Traffic</h3>
+                <div class="traffic-light">
+                    <div class="light red" id="ns-red"></div>
+                    <div class="light yellow off" id="ns-yellow"></div>
+                    <div class="light green off" id="ns-green"></div>
+                </div>
+                <div class="controls">
+                    <button class="btn" onclick="emergencyOverride('ns')">Emergency Override</button>
+                </div>
+            </div>
+            
+            <div class="intersection">
+                <h3 style="text-align: center; margin-bottom: 20px;">East-West Traffic</h3>
+                <div class="traffic-light">
+                    <div class="light red off" id="ew-red"></div>
+                    <div class="light yellow off" id="ew-yellow"></div>
+                    <div class="light green" id="ew-green"></div>
+                </div>
+                <div class="controls">
+                    <button class="btn" onclick="emergencyOverride('ew')">Emergency Override</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="metrics">
+            <h3 style="margin-bottom: 20px; text-align: center;">Real-Time Metrics</h3>
+            <div class="metric-item">
+                <span>Traffic Flow Efficiency:</span>
+                <span class="metric-value" id="efficiency">97.1%</span>
+            </div>
+            <div class="metric-item">
+                <span>Average Wait Time:</span>
+                <span class="metric-value" id="wait-time">32s</span>
+            </div>
+            <div class="metric-item">
+                <span>Vehicles Processed:</span>
+                <span class="metric-value" id="vehicles">1,247</span>
+            </div>
+            <div class="metric-item">
+                <span>Emergency Vehicles Priority:</span>
+                <span class="metric-value" id="emergency">2 Active</span>
+            </div>
+            <div class="metric-item">
+                <span>AI Confidence Score:</span>
+                <span class="metric-value" id="confidence">98.3%</span>
+            </div>
+        </div>
+        
+        <div style="text-align: center; margin-top: 40px;">
+            <button class="btn" onclick="toggleSimulation()">Start/Stop Simulation</button>
+            <button class="btn" onclick="resetSystem()">Reset System</button>
+        </div>
+        
+        <div style="text-align: center; margin-top: 30px; color: #6b7280;">
+            <p>This is a demonstration of AI-driven traffic management capabilities.</p>
+            <p>Real implementation uses YOLOv8 computer vision and multi-agent optimization.</p>
+        </div>
+    </div>
+
+    <script>
+        let simulationActive = true;
+        let currentPhase = 'ew';
+        
+        function updateLights() {
+            const phases = {
+                'ew': {
+                    'ns-red': false, 'ns-yellow': true, 'ns-green': true,
+                    'ew-red': true, 'ew-yellow': true, 'ew-green': false
+                },
+                'ns': {
+                    'ns-red': true, 'ns-yellow': true, 'ns-green': false,
+                    'ew-red': false, 'ew-yellow': true, 'ew-green': true
+                }
+            };
+            
+            Object.keys(phases[currentPhase]).forEach(lightId => {
+                const light = document.getElementById(lightId);
+                if (phases[currentPhase][lightId]) {
+                    light.classList.add('off');
+                } else {
+                    light.classList.remove('off');
+                }
+            });
+        }
+        
+        function switchPhase() {
+            if (!simulationActive) return;
+            
+            currentPhase = currentPhase === 'ew' ? 'ns' : 'ew';
+            updateLights();
+            
+            const efficiency = (95 + Math.random() * 5).toFixed(1);
+            const waitTime = Math.floor(25 + Math.random() * 15);
+            const vehicles = parseInt(document.getElementById('vehicles').textContent) + Math.floor(Math.random() * 5);
+            const confidence = (96 + Math.random() * 4).toFixed(1);
+            
+            document.getElementById('efficiency').textContent = efficiency + '%';
+            document.getElementById('wait-time').textContent = waitTime + 's';
+            document.getElementById('vehicles').textContent = vehicles;
+            document.getElementById('confidence').textContent = confidence + '%';
+        }
+        
+        function emergencyOverride(direction) {
+            document.getElementById('status').textContent = 'Emergency Override Active - Prioritizing ' + 
+                (direction === 'ns' ? 'North-South' : 'East-West') + ' Traffic';
+            document.getElementById('status').style.background = '#7c2d12';
+            document.getElementById('status').style.color = '#fbbf24';
+            
+            currentPhase = direction;
+            updateLights();
+            
+            setTimeout(() => {
+                document.getElementById('status').textContent = 'System Status: AI Optimization Active';
+                document.getElementById('status').style.background = '#064e3b';
+                document.getElementById('status').style.color = '#10b981';
+            }, 5000);
+        }
+        
+        function toggleSimulation() {
+            simulationActive = !simulationActive;
+            const status = document.getElementById('status');
+            
+            if (simulationActive) {
+                status.textContent = 'System Status: AI Optimization Active';
+                status.style.background = '#064e3b';
+                status.style.color = '#10b981';
+            } else {
+                status.textContent = 'System Status: Simulation Paused';
+                status.style.background = '#7c2d12';
+                status.style.color = '#fbbf24';
+            }
+        }
+        
+        function resetSystem() {
+            currentPhase = 'ew';
+            updateLights();
+            document.getElementById('efficiency').textContent = '97.1%';
+            document.getElementById('wait-time').textContent = '32s';
+            document.getElementById('vehicles').textContent = '1,247';
+            document.getElementById('confidence').textContent = '98.3%';
+        }
+        
+        setInterval(switchPhase, 4000);
+        updateLights();
+    </script>
+</body>
+</html>
