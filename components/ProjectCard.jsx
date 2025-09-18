@@ -86,7 +86,23 @@ export default function ProjectCard({ project, index }) {
           </div>
 
           <div className="flex gap-3 pt-4 border-t border-gray-200 dark:border-gray-800">
-            {project.repo && (
+            {/* GitHub repository link */}
+            {project.link && project.link.includes('github') && (
+              <motion.a
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <Github className="w-4 h-4" />
+                Code
+              </motion.a>
+            )}
+            
+            {/* Paper/Publication link */}
+            {project.repo && !project.repo.includes('github') && (
               <motion.a
                 href={project.repo}
                 target="_blank"
@@ -95,8 +111,23 @@ export default function ProjectCard({ project, index }) {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                {project.repo.includes('github') ? <Github className="w-4 h-4" /> : <ExternalLink className="w-4 h-4" />}
-                {project.repo.includes('github') ? 'Code' : 'View'}
+                <ExternalLink className="w-4 h-4" />
+                Paper
+              </motion.a>
+            )}
+            
+            {/* GitHub repo link (for projects where repo contains github) */}
+            {project.repo && project.repo.includes('github') && (
+              <motion.a
+                href={project.repo}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <Github className="w-4 h-4" />
+                Code
               </motion.a>
             )}
             
@@ -114,7 +145,7 @@ export default function ProjectCard({ project, index }) {
               </motion.a>
             )}
             
-            {!project.repo && !project.live && (
+            {!project.repo && !project.live && !project.link && (
               <span className="flex items-center gap-2 text-sm font-medium text-gray-500 dark:text-gray-500">
                 <Eye className="w-4 h-4" />
                 Case Study
