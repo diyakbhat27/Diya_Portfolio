@@ -115,12 +115,12 @@
     }
   ],
   "certifications": [
-    {"title": "AWS Academy Machine Learning Foundations", "issuer": "AWS", "year": "2024", "link": "https://example.com"},
-    {"title": "AWS Academy Cloud Foundations", "issuer": "AWS", "year": "2024", "link": "https://example.com"},
-    {"title": "Google Cloud Computing Foundations", "issuer": "Google", "year": "2024", "link": "https://example.com"},
-    {"title": "Data Science with Python", "issuer": "Simplilearn", "year": "2024", "link": "https://example.com"},
-    {"title": "Data Visualization: Empowering Business with Insights", "issuer": "Tata Forage", "year": "2024", "link": "https://example.com"},
-    {"title": "Career Essentials in Generative AI", "issuer": "Microsoft & LinkedIn", "year": "2024", "link": "https://example.com"},
+    {"title": "AWS Academy Machine Learning Foundations", "issuer": "AWS", "year": "2024", "link": "https://www.credly.com/badges/ea997df1-fdcf-4923-85cb-518a0fe56a5c/linked_in_profile"},
+    {"title": "AWS Academy Cloud Foundations", "issuer": "AWS", "year": "2024", "link": "https://www.credly.com/badges/1445362f-aef2-45b0-8812-637f9228b3ab/linked_in_profile"},
+    {"title": "Google Cloud Computing Foundations", "issuer": "Google", "year": "2024", "link": "https://www.credly.com/badges/839bc3c8-e92c-4d82-9476-04dca85306a3/linked_in_profile"},
+    {"title": "Data Science with Python", "issuer": "Simplilearn", "year": "2024", "link": "https://www.linkedin.com/in/diya-k-bhat-75b450257/details/certifications/"},
+    {"title": "Data Visualization: Empowering Business with Insights", "issuer": "Tata Forage", "year": "2024", "link": "https://www.linkedin.com/posts/diya-k-bhat-75b450257_data-visualization-course-tata-activity-7251216947881639937-IJ6P?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD8_eTcBAJZfPUcw1jaQOpFdMESDSjTfXIs"},
+    {"title": "Career Essentials in Generative AI", "issuer": "Microsoft & LinkedIn", "year": "2024", "link": "https://www.linkedin.com/learning/certificates/a4b1fc960a8a2b9d938f93e0796f0809d61c652c3248bdb76af408b0feb9b9e1"},
     {"title": "Gemini in Google Workspace", "issuer": "Google Cloud Skills Boost", "year": "2024", "link": "https://example.com"}
   ],
   "publications": [
@@ -138,8 +138,9 @@
   ],
   "extracurriculars": [
     {"role": "Assistant Editor", "activity": "JITIMES College Magazine"},
-    {"role": "Student Placement Coordinator", "activity": "Placement Drives at JIT"},
+    {"role": "Student Placement Coordinator", "activity": "Coordinated Placement Drives at JIT"},
     {"role": "Campus Ambassador", "activity": "GirlScript Summer of Code 2025"},
+    {"role": "LinkedIn Profile Manager", "activity": "Girls leading Tech"},
     {"role": "Documentation Lead", "activity": "AI Nexus Club"},
     {"role": "Social Media Lead", "activity": "HackAura Global Hackathon"}
   ],
