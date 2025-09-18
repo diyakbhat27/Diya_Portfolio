@@ -44,6 +44,7 @@
       "type": "Machine Learning",
       "summary": "K-Means clustering model with Google Maps API for location-based restaurant recommendations. Achieved a Silhouette Score of 0.6. Published in JETIR.",
       "tech": ["Python", "K-Means", "Google Maps API", "FastAPI", "HTML/CSS"],
+      "repo":"https://github.com/diyakbhat27/Frugal-Foodie-A-Cost-Based-Restaurant-Clustering-and-Location-Based-Recommendation-System",
       "repo": "http://www.jetir.org/papers/JETIR2505064.pdf",
       "link": "https://github.com/diyakbhat27/Frugal-Foodie-A-Cost-Based-Restaurant-Clustering-and-Location-Based-Recommendation-System",
       "image": "/projects/frugal-foodie.png",
