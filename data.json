@@ -45,7 +45,7 @@
       "summary": "K-Means clustering model with Google Maps API for location-based restaurant recommendations. Achieved a Silhouette Score of 0.6. Published in JETIR.",
       "tech": ["Python", "K-Means", "Google Maps API", "FastAPI", "HTML/CSS"],
       "repo": "http://www.jetir.org/papers/JETIR2505064.pdf",
-      "link": "https://github.com/diyakbhat27/Frugal-Foodie",
+      "link": "https://github.com/diyakbhat27/Frugal-Foodie-A-Cost-Based-Restaurant-Clustering-and-Location-Based-Recommendation-System",
       "image": "/projects/frugal-foodie.png",
       "features": [
         "K-Means clustering for restaurant grouping by cost",
@@ -58,7 +58,7 @@
     {
       "id": "proj-3",
       "title": "AI for Pandemic Prediction",
-      "type": "Data Science",
+      "type": "Predictive Modeling",
       "summary": "Regression model predicting pandemic potential using COVID-19 data across 150+ countries. Includes Streamlit dashboard for visualization.",
       "tech": ["Python", "Pandas", "Streamlit"],
       "repo": "https://github.com/diyakbhat27/AI-for-pandemic-prediction",
