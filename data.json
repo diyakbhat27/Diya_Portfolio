@@ -46,7 +46,6 @@
       "tech": ["Python", "K-Means", "Google Maps API", "FastAPI", "HTML/CSS"],
       "repo": "http://www.jetir.org/papers/JETIR2505064.pdf",
       "link": "https://github.com/diyakbhat27/Frugal-Foodie",
-      "image": "/projects/frugal-foodie.png",
       "features": [
         "K-Means clustering for restaurant grouping by cost",
         "Google Maps API integration for location data",
@@ -63,7 +62,6 @@
       "tech": ["Python", "Pandas", "Streamlit"],
       "repo": "https://github.com/diyakbhat27/AI-for-pandemic-prediction",
       "link": "https://github.com/diyakbhat27/AI-for-pandemic-prediction",
-      "image": "/projects/pandemic-prediction.png",
       "features": [
         "COVID-19 data analysis across 150+ countries",
         "Regression modeling for pandemic potential prediction",
@@ -79,7 +77,6 @@
       "summary": "ML pipeline to detect fraudulent job postings using NLP, embeddings, and classification. Preprocessing, model training, and evaluation included.",
       "tech": ["Python", "scikit-learn", "Pandas", "NLP"],
       "repo": "https://github.com/diyakbhat27/spot-the-job-scam",
-      "image": "/projects/spot-job-scam.png",
       "features": [
         "Natural Language Processing for text analysis",
         "Feature extraction using embeddings and TF-IDF",
