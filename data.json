@@ -142,7 +142,9 @@
     {"role": "Campus Ambassador", "activity": "GirlScript Summer of Code 2025"},
     {"role": "LinkedIn Profile Manager", "activity": "Girls leading Tech"},
     {"role": "Documentation Lead", "activity": "AI Nexus Club"},
-    {"role": "Social Media Lead", "activity": "HackAura Global Hackathon"}
+    {"role": "Social Media Lead", "activity": "HackAura Global Hackathon"},
+    {"role": "Python workshop instructor", "activity": "JIT"},
+    {"role": "Master of Ceremonnies", "activity": "JIT"}
   ],
   "contact": {
     "email": "diyakbhat29012004@gmail.com",
