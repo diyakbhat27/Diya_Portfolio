@@ -28,7 +28,6 @@
       "type": "Computer Vision",
       "summary": "Developed an AI-driven system with dynamic flow optimization, emergency vehicle priority, and smart pedestrian handling. Fine-tuned YOLOv8 on 4,000+ images, achieving 97.1% mAP50. Enabled real-time inference on live CCTV streams for low-latency emergency response.",
       "tech": ["YOLOv8", "OpenCV", "Python", "Flask"],
-      "image": "/projects/traffic-system.png",
       "repo": "https://github.com/diyakbhat27/traffic-system",
       "features": [
         "Real-time vehicle detection with 97.1% mAP50 accuracy",
@@ -55,7 +54,7 @@
       ]
     },
     {
-      "id": "proj-3",
+      "id": "proj-4",
       "title": "AI for Pandemic Prediction",
       "type": "Data Science",
       "summary": "Regression model predicting pandemic potential using COVID-19 data across 150+ countries. Includes Streamlit dashboard for visualization.",
@@ -71,7 +70,7 @@
       ]
     },
     {
-      "id": "proj-4",
+      "id": "proj-3",
       "title": "Spot the Job Scam",
       "type": "NLP & Classification",
       "summary": "ML pipeline to detect fraudulent job postings using NLP, embeddings, and classification. Preprocessing, model training, and evaluation included.",
