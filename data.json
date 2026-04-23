@@ -24,12 +24,14 @@
       "type": "Computer Vision",
       "summary": "Developed an AI-driven system with dynamic flow optimization, emergency vehicle priority, and smart pedestrian handling. Fine-tuned YOLOv8 on 4,000+ images, achieving 97.1% mAP50. Enabled real-time inference on live CCTV streams for low-latency emergency response.",
       "tech": ["YOLOv8", "OpenCV", "Python", "Flask"],
+      "repo":"https://github.com/diyakbhat27",
       "features": [
         "Real-time vehicle detection with 97.1% mAP50 accuracy",
         "Emergency vehicle priority system with automatic lane clearing",
         "Smart pedestrian crossing management",
         "Multi-agent coordination between intersections",
         "Live CCTV feed processing with <100ms latency"
+        
       ]
     },
     {
