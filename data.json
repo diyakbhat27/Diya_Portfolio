@@ -5,7 +5,7 @@
     "location": "Bengaluru, India",
     "email": "diyakbhat29012004@gmail.com",
     "phone": "+91 9886290531",
-    "shortBio": "AI & ML engineer with expertise in Python, SQL, data science, and cloud platforms (AWS, GCP). Experienced in computer vision, predictive modeling, and building deployable AI/ML systems. Passionate about solving real-world challenges with impactful solutions.",
+    "shortBio": " AI & ML engineer with strong expertise in Python, SQL, and Data Science. Experienced in computer vision, and predictive modeling with practical exposure to building and deploying scalable solutions. Passionate about creating impactful projects that drive real-world change.",
     "avatar": "/assets/avatar.jpg",
     "resumeFile": "/resume.pdf",
     "social": {
@@ -13,12 +13,8 @@
       "linkedin": "https://www.linkedin.com/in/diya-k-bhat-75b450257"
     },
     "skills": [
-      "Python", "C", "Java", "C++", "R",
-      "SQL", "MySQL", "MongoDB",
-      "AWS", "Google Cloud",
-      "OpenAI APIs",
-      "Tableau", "Power BI",
-      "Agile", "Remote Collaboration"
+       "Python", "Java", "C", "C++", "R", "HTML", "CSS", "SQL", "MySQL", "MongoDB", "AWS", "Google Cloud", "Tableau","Power BI",
+       "Collaboration", "Problem Solving", "Leadership", "Team Management", "Adaptability", "Remote Teamwork", "Agile Methodologies"
     ]
   },
   "projects": [
@@ -28,7 +24,6 @@
       "type": "Computer Vision",
       "summary": "Developed an AI-driven system with dynamic flow optimization, emergency vehicle priority, and smart pedestrian handling. Fine-tuned YOLOv8 on 4,000+ images, achieving 97.1% mAP50. Enabled real-time inference on live CCTV streams for low-latency emergency response.",
       "tech": ["YOLOv8", "OpenCV", "Python", "Flask"],
-      "repo": "https://github.com/diyakbhat27/traffic-system",
       "features": [
         "Real-time vehicle detection with 97.1% mAP50 accuracy",
         "Emergency vehicle priority system with automatic lane clearing",
@@ -95,7 +90,8 @@
     {
       "degree": "Credit-Linked Program in Data Science",
       "institute": "Daksh Gurukul – IIT Guwahati",
-      "year": "2025*"
+      "year": "2026",
+      "details": "Aggregate: 92%"
     },
     {
       "degree": "PUC",
