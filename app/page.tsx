@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
-import { Code2, Cpu, Database, BookOpen, Award, Users } from 'lucide-react'
+import { Code2, Cpu, Database, BookOpen, Award, Users, Briefcase } from 'lucide-react'
 
 import NavBar from '../components/NavBar'
 import Hero from '../components/Hero'
@@ -22,11 +22,11 @@ export default function Home() {
 
   if (!mounted) return null
 
-  const { profile, projects, education, certifications, publications, extracurriculars } = data
+  const { profile, projects, education, certifications, publications, extracurriculars, experience } = data
 
   return (
     <>
-      <SEO 
+      <SEO
         title={profile.fullName}
         description={profile.shortBio}
         keywords={`${profile.skills?.join(', ')}, portfolio, developer`}
@@ -34,18 +34,71 @@ export default function Home() {
         url="https://diyakbhat.dev"
         image={profile.avatar}
       />
-      
+
       <ParticlesBackground />
       <NavBar />
-      
+
       <main>
         <section id="home">
           <Hero profile={profile} />
         </section>
 
+        {experience && experience.length > 0 && (
+          <section id="experience" className="section relative z-10 bg-dark-100/30">
+            <div className="container">
+              <motion.div
+                className="text-center mb-16"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+              >
+                <h2 className="mb-6 text-blue-400">Work <span className="gradient-text">Experience</span></h2>
+                <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+                  Professional experience building real-world AI and backend systems
+                </p>
+              </motion.div>
+
+              <div className="space-y-8 max-w-4xl mx-auto">
+                {experience.map((exp, index) => (
+                  <motion.div
+                    key={exp.id}
+                    className="card p-8"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                    whileHover={{ scale: 1.01, y: -2 }}
+                  >
+                    <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-4 gap-2">
+                      <div className="flex items-start gap-3">
+                        <Briefcase className="w-6 h-6 text-blue-400 flex-shrink-0 mt-1" />
+                        <div>
+                          <h3 className="text-xl font-bold text-white">{exp.role}</h3>
+                          <p className="text-blue-400 font-semibold">{exp.company}</p>
+                        </div>
+                      </div>
+                      <div className="md:text-right">
+                        <span className="text-sm text-gray-300 bg-dark-50/60 border border-slate-600/30 px-3 py-1 rounded-full">{exp.period}</span>
+                        <p className="text-sm text-gray-400 mt-2">{exp.location}</p>
+                      </div>
+                    </div>
+                    <ul className="space-y-2 mt-4 ml-9">
+                      {exp.highlights.map((point, i) => (
+                        <li key={i} className="flex items-start gap-2 text-gray-300">
+                          <span className="text-blue-400 mt-1 flex-shrink-0">▸</span>
+                          <span>{point}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
+
         <section id="projects" className="section relative z-10">
           <div className="container">
-            <motion.div 
+            <motion.div
               className="text-center mb-16"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -59,7 +112,7 @@ export default function Home() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
               {projects?.map((project, index) => (
-                <ProjectCard 
+                <ProjectCard
                   key={project.id}
                   project={project}
                   index={index}
@@ -71,7 +124,7 @@ export default function Home() {
 
         <section id="skills" className="section relative z-10">
           <div className="container">
-            <motion.div 
+            <motion.div
               className="text-center mb-16"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -83,7 +136,7 @@ export default function Home() {
               </p>
             </motion.div>
 
-            <motion.div 
+            <motion.div
               className="flex flex-wrap justify-center gap-4 mb-12"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -104,7 +157,7 @@ export default function Home() {
             </motion.div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <motion.div 
+              <motion.div
                 className="card p-8 text-center"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -116,7 +169,7 @@ export default function Home() {
                 <p className="text-gray-300">Creating responsive and interactive user interfaces with modern frameworks</p>
               </motion.div>
 
-              <motion.div 
+              <motion.div
                 className="card p-8 text-center"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -128,7 +181,7 @@ export default function Home() {
                 <p className="text-gray-300">Building intelligent systems with machine learning and deep learning techniques</p>
               </motion.div>
 
-              <motion.div 
+              <motion.div
                 className="card p-8 text-center"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -145,7 +198,7 @@ export default function Home() {
 
         <section id="education" className="section relative z-10 bg-dark-100/30">
           <div className="container">
-            <motion.div 
+            <motion.div
               className="text-center mb-16"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -165,7 +218,7 @@ export default function Home() {
                 </h3>
                 <div className="space-y-4">
                   {education?.map((item, index) => (
-                    <ModalCard 
+                    <ModalCard
                       key={index}
                       item={item}
                       type="education"
@@ -182,7 +235,7 @@ export default function Home() {
                 </h3>
                 <div className="space-y-4">
                   {certifications?.map((item, index) => (
-                    <ModalCard 
+                    <ModalCard
                       key={index}
                       item={item}
                       type="certification"
@@ -197,7 +250,7 @@ export default function Home() {
 
         <section id="achievements" className="section relative z-10">
           <div className="container">
-            <motion.div 
+            <motion.div
               className="text-center mb-16"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -217,7 +270,7 @@ export default function Home() {
                 </h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   {publications.map((item, index) => (
-                    <ModalCard 
+                    <ModalCard
                       key={index}
                       item={item}
                       type="publication"
@@ -236,7 +289,7 @@ export default function Home() {
                 </h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                   {extracurriculars.map((item, index) => (
-                    <ModalCard 
+                    <ModalCard
                       key={index}
                       item={item}
                       type="extracurricular"
@@ -260,7 +313,7 @@ export default function Home() {
               <p className="text-xl text-gray-300 mb-12 max-w-2xl mx-auto">
                 I'm always open to discussing new opportunities and interesting projects
               </p>
-              
+
               <div className="flex flex-wrap justify-center gap-6">
                 <motion.a
                   href={`mailto:${profile.email}`}
@@ -270,7 +323,7 @@ export default function Home() {
                 >
                   Send Email
                 </motion.a>
-                
+
                 <motion.a
                   href={profile.resumeFile}
                   className="btn-outline flex items-center gap-2"
@@ -285,7 +338,7 @@ export default function Home() {
           </div>
         </section>
       </main>
-      
+
       <Footer profile={profile} />
     </>
   )

@@ -15,7 +15,7 @@ export default function Footer({ profile }) {
       <div className="container mx-auto px-4 py-16">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
           <div className="md:col-span-2">
-            <motion.div 
+            <motion.div
               className="mb-6"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -29,7 +29,7 @@ export default function Footer({ profile }) {
               </p>
             </motion.div>
 
-            <motion.div 
+            <motion.div
               className="flex gap-6"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -45,7 +45,7 @@ export default function Footer({ profile }) {
                   <Github className="w-5 h-5 group-hover:scale-110 transition-transform duration-200" />
                 </a>
               )}
-              
+
               {profile?.social?.linkedin && (
                 <a
                   href={profile.social.linkedin}
@@ -56,7 +56,7 @@ export default function Footer({ profile }) {
                   <Linkedin className="w-5 h-5 group-hover:scale-110 transition-transform duration-200" />
                 </a>
               )}
-              
+
               {profile?.email && (
                 <a
                   href={`mailto:${profile.email}`}
@@ -80,6 +80,7 @@ export default function Footer({ profile }) {
               <ul className="space-y-3">
                 {[
                   { name: 'Home', href: '#home' },
+                  { name: 'Experience', href: '#experience' },
                   { name: 'Projects', href: '#projects' },
                   { name: 'Education & Certifications', href: '#education' },
                   { name: 'Skills', href: '#skills' },
@@ -121,11 +122,11 @@ export default function Footer({ profile }) {
                     </span>
                   </li>
                 )}
-                
+
                 {profile?.email && (
                   <li className="flex items-center gap-3">
                     <Mail className="w-5 h-5 text-gray-400 flex-shrink-0" />
-                    <a 
+                    <a
                       href={`mailto:${profile.email}`}
                       className="text-gray-300 hover:text-primary-400 transition-colors duration-200"
                     >
@@ -133,11 +134,11 @@ export default function Footer({ profile }) {
                     </a>
                   </li>
                 )}
-                
+
                 {profile?.phone && (
                   <li className="flex items-center gap-3">
                     <Phone className="w-5 h-5 text-gray-400 flex-shrink-0" />
-                    <a 
+                    <a
                       href={`tel:${profile.phone}`}
                       className="text-gray-300 hover:text-primary-400 transition-colors duration-200"
                     >
@@ -150,7 +151,7 @@ export default function Footer({ profile }) {
           </div>
         </div>
 
-        <motion.div 
+        <motion.div
           className="pt-8 border-t border-primary-900/30"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -162,7 +163,7 @@ export default function Footer({ profile }) {
               <Heart className="w-4 h-4 inline-block text-red-500 mx-1" />
               using Next.js & Tailwind CSS
             </p>
-            
+
             <motion.button
               onClick={scrollToTop}
               className="flex items-center gap-2 px-4 py-2 bg-dark-50/60 border border-primary-600/30 hover:bg-dark-50/80 hover:border-primary-400 rounded-lg transition-colors duration-200 group"

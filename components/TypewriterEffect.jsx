@@ -2,8 +2,8 @@
 
 import { useState, useEffect } from 'react'
 
-export default function TypewriterEffect({ 
-  texts = ["AI & ML Engineer", "Data science enthusiast", "Data-Driven Innovator", "Cloud computing", "Computer Vision"],
+export default function TypewriterEffect({
+  texts = ["AI & ML Engineer", "LLM & RAG ", "GenAI", "Agentic AI", "Computer Vision", "Data Science Enthusiast", "AI Agenets", "Backend & Cloud"],
   speed = 150,
   deleteSpeed = 100,
   delay = 2000,

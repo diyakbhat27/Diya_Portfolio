@@ -1,11 +1,11 @@
 {
   "profile": {
     "fullName": "Diya K Bhat",
-    "headline": "Final Year AI & ML Engineer | Data-Driven Innovator | Cloud & Computer Vision",
+    "headline": "AI & ML Engineer | LLMs, RAG & Computer Vision | GenAI | AI Agents | Agentic AI | Data Science Enthusiast | Backend & Cloud",
     "location": "Bengaluru, India",
     "email": "diyakbhat29012004@gmail.com",
     "phone": "+91 9886290531",
-    "shortBio": " AI & ML engineer with strong expertise in Python, SQL, and Data Science. Experienced in computer vision, and predictive modeling with practical exposure to building and deploying scalable solutions. Passionate about creating impactful projects that drive real-world change.",
+    "shortBio": "AI & ML Engineer with hands-on experience building LLM and RAG systems, computer vision pipelines, agentic AI workflows, and production backend services. Proficient in Python, PyTorch, FastAPI, LangChain, LangGraph, PostgreSQL, Docker, and REST APIs. Passionate about creating impactful, real-world AI solutions.",
     "avatar": "/assets/avatar.jpg",
     "resumeFile": "/resume.pdf",
     "social": {
@@ -13,48 +13,184 @@
       "linkedin": "https://www.linkedin.com/in/diya-k-bhat-75b450257"
     },
     "skills": [
-       "Python", "Java", "C", "C++", "R", "HTML", "CSS", "SQL", "MySQL", "MongoDB", "AWS", "Google Cloud", "Tableau","Power BI",
-       "Collaboration", "Problem Solving", "Leadership", "Team Management", "Adaptability", "Remote Teamwork", "Agile Methodologies"
+      "Python",
+      "SQL",
+      "Java",
+      "C",
+      "R",
+      "Machine Learning",
+      "Deep Learning",
+      "K-Means",
+      "Scikit-learn",
+      "LLMs",
+      "RAG",
+      "Prompt Engineering",
+      "Agentic AI",
+      "AI Agents",
+      "LangChain",
+      "LangGraph",
+      "Gemini API",
+      "Embeddings",
+      "RLHF",
+      "YOLOv8",
+      "OpenCV",
+      "Computer Vision",
+      "FastAPI",
+      "Flask",
+      "Django",
+      "REST APIs",
+      "JWT Authentication",
+      "PostgreSQL",
+      "MySQL",
+      "MongoDB",
+      "SQLite",
+      "Docker",
+      "AWS",
+      "Google Cloud",
+      "Git",
+      "GitHub",
+      "Render",
+      "Netlify",
+      "React",
+      "HTML",
+      "CSS",
+      "TypeScript",
+      "JavaScript",
+      "Tableau",
+      "Power BI",
+      "Streamlit",
+      "Pandas",
+      "NumPy",
+      "PyTorch"
     ]
   },
+  "experience": [
+    {
+      "id": "exp-1",
+      "role": "AI Engineering Intern",
+      "company": "WizzyBox Pvt. Ltd.",
+      "location": "Bengaluru, Karnataka",
+      "period": "Sep 2025 – Jun 2026",
+      "highlights": [
+        "Engineered AI-powered LMS modules including a course recommendation engine, conversational AI Coach, automated proctoring, and real-time assessments using Python, Django, FastAPI, React, PostgreSQL, and REST APIs, supporting 500+ users.",
+        "Developed recommendation and dynamic skill-scoring algorithms using learner profiles and outcomes, delivering personalized courses, real-time proficiency updates, and low-latency recommendations; automated assessments achieved 95% evaluation accuracy.",
+        "Built and secured scalable backend services and JWT-authenticated REST APIs for application logic, database operations, and frontend integration, while handling testing, debugging, Docker, Git, deployment, and Agile SDLC workflows."
+      ]
+    },
+    {
+      "id": "exp-2",
+      "role": "Freelance AI Contributor",
+      "company": "Outlier.ai",
+      "location": "Remote",
+      "period": "Nov 2024 – Jan 2025",
+      "highlights": [
+        "Improved LLM output accuracy by 20% through rigorous testing, evaluation, and refinement across summarization, translation, reasoning, multilingual, and diverse content-generation tasks.",
+        "Supported RLHF workflows by generating high-quality human preference annotations and evaluating model responses across economics, medicine, law, and psychology, contributing to more reliable and human-aligned AI systems.",
+        "Curated and optimized structured multilingual, multi-domain datasets for AI training and evaluation pipelines, improving data quality, scalability, usability, and overall model reliability."
+      ]
+    }
+  ],
   "projects": [
     {
-      "id": "proj-1",
-      "title": "AI-Driven Traffic Congestion Management",
-      "type": "Computer Vision",
-      "summary": "Developed an AI-driven system with dynamic flow optimization, emergency vehicle priority, and smart pedestrian handling. Fine-tuned YOLOv8 on 4,000+ images, achieving 97.1% mAP50. Enabled real-time inference on live CCTV streams for low-latency emergency response.",
-      "tech": ["YOLOv8", "OpenCV", "Python", "Flask"],
-      "repo":"https://github.com/diyakbhat27",
+      "id": "proj-rag",
+      "title": "AI Documentation Assistant using RAG",
+      "type": "Generative AI & RAG",
+      "summary": "End-to-end RAG system for querying technical documentation with asynchronous ingestion, semantic retrieval, and grounded response generation using Gemini 1.5 Flash and ChromaDB.",
+      "tech": [
+        "Python",
+        "FastAPI",
+        "LangChain",
+        "ChromaDB",
+        "Gemini API",
+        "SQLite"
+      ],
+      "repo": "https://github.com/diyakbhat27/AI-Documentation-Assistant-using-RAG",
+      "link": "https://github.com/diyakbhat27/AI-Documentation-Assistant-using-RAG",
       "features": [
-        "Real-time vehicle detection with 97.1% mAP50 accuracy",
-        "Emergency vehicle priority system with automatic lane clearing",
-        "Smart pedestrian crossing management",
-        "Multi-agent coordination between intersections",
-        "Live CCTV feed processing with <100ms latency"
-        
+        "Async disk-cached ingestion pipeline with concurrent page processing and incremental updates",
+        "all-MiniLM-L6-v2 embeddings with ChromaDB for semantic search (800-char chunks, 150-char overlap, top-5 retrieval)",
+        "Gemini 1.5 Flash with context-grounding and source-citation prompts for accurate, grounded answers",
+        "FastAPI endpoints for querying, retrieval, health checks, and indexing",
+        "SQLite-based query logging and response-time tracking"
+      ]
+    },
+    {
+      "id": "proj-1",
+      "title": "AI-Driven Smart Traffic Management System",
+      "type": "Computer Vision",
+      "summary": "Real-time vehicle detection pipeline with YOLOv8 achieving mAP of 0.92 for vehicle classification and 0.96 for emergency vehicle detection, using a federated multi-model decision architecture.",
+      "tech": [
+        "Python",
+        "YOLOv8",
+        "PyTorch",
+        "OpenCV",
+        "Flask"
+      ],
+      "repo": "https://github.com/diyakbhat27",
+      "features": [
+        "Real-time vehicle detection with 0.92 mAP (vehicle) and 0.96 mAP (emergency vehicle)",
+        "Multi-model decision architecture fusing three YOLOv8 models via priority-based state machine",
+        "Adaptive traffic signal control with emergency vehicle priority and automatic lane clearing",
+        "Flask REST APIs for vehicle analytics",
+        "Live multi-lane monitoring dashboard"
       ]
     },
     {
       "id": "proj-2",
       "title": "Frugal Foodie: Cost-Based Restaurant Clustering",
       "type": "Machine Learning",
-      "summary": "K-Means clustering model with Google Maps API for location-based restaurant recommendations. Achieved a Silhouette Score of 0.6. Published in JETIR.",
-      "tech": ["Python", "K-Means", "Google Maps API", "FastAPI", "HTML/CSS"],
+      "summary": "Location-based restaurant recommendation system using K-Means clustering, Google Maps API, and Gemini API. Clusters restaurants by pricing with a Silhouette Score of 0.60. Published in JETIR.",
+      "tech": [
+        "Python",
+        "K-Means",
+        "FastAPI",
+        "Google Maps API",
+        "Gemini API",
+        "HTML/CSS"
+      ],
       "repo": "https://github.com/diyakbhat27/Frugal-Foodie",
       "features": [
-        "K-Means clustering for restaurant grouping by cost",
-        "Google Maps API integration for location data",
-        "Silhouette Score of 0.6 for optimal clustering",
+        "K-Means clustering for restaurant grouping by cost (Silhouette Score: 0.60)",
+        "Google Maps API integration for location-aware recommendations",
+        "Gemini API for dynamic, personalized dining suggestions",
         "FastAPI backend with responsive frontend",
         "Published research paper in JETIR journal"
+      ]
+    },
+    {
+      "id": "proj-3",
+      "title": "Spot the Job Scam",
+      "type": "NLP & Classification",
+      "summary": "ML pipeline to detect fraudulent job postings using TF-IDF, SMOTE, and a stacked ensemble of XGBoost, Random Forest, and Logistic Regression. Achieved F1-score of 0.84 on the fraud class.",
+      "tech": [
+        "Python",
+        "Flask",
+        "React",
+        "TypeScript",
+        "XGBoost",
+        "scikit-learn"
+      ],
+      "repo": "https://github.com/diyakbhat27/spot-the-job-scam",
+      "link": "https://github.com/diyakbhat27/spot-the-job-scam",
+      "features": [
+        "TF-IDF text features with SMOTE class balancing for fraud detection",
+        "Stacked ensemble: XGBoost, Random Forest, and Logistic Regression",
+        "F1-score of 0.84 on fraud class (95% precision, 76% recall)",
+        "Real-time predictions, confidence scoring, and keyword highlighting",
+        "Backend deployed on Render, frontend on Netlify"
       ]
     },
     {
       "id": "proj-4",
       "title": "AI for Pandemic Prediction",
       "type": "Data Science",
-      "summary": "Regression model predicting pandemic potential using COVID-19 data across 150+ countries. Includes Streamlit dashboard for visualization.",
-      "tech": ["Python", "Pandas", "Streamlit"],
+      "summary": "Regression model predicting pandemic potential using COVID-19 data across 150+ countries. Includes Streamlit dashboard for data visualization.",
+      "tech": [
+        "Python",
+        "Pandas",
+        "Streamlit",
+        "Scikit-learn"
+      ],
       "repo": "https://github.com/diyakbhat27/AI-for-pandemic-prediction",
       "link": "https://github.com/diyakbhat27/AI-for-pandemic-prediction",
       "features": [
@@ -64,38 +200,23 @@
         "Statistical analysis and trend identification",
         "Real-time data processing and insights"
       ]
-    },
-    {
-      "id": "proj-3",
-      "title": "Spot the Job Scam",
-      "type": "NLP & Classification",
-      "summary": "ML pipeline to detect fraudulent job postings using NLP, embeddings, and classification. Preprocessing, model training, and evaluation included.",
-      "tech": ["Python", "scikit-learn", "Pandas", "NLP"],
-      "repo": "https://github.com/diyakbhat27/spot-the-job-scam",
-      "features": [
-        "Natural Language Processing for text analysis",
-        "Feature extraction using embeddings and TF-IDF",
-        "Binary classification for scam detection",
-        "Comprehensive data preprocessing pipeline",
-        "Model evaluation with accuracy and precision metrics"
-      ]
     }
   ],
   "education": [
     {
       "degree": "B.E. Artificial Intelligence & Machine Learning",
-      "institute": "Jyothy Institute of Technology, VTU",
-      "year": "2026*",
-      "details": "Aggregate: 85%"
+      "institute": "Jyothy Institute of Technology (VTU)",
+      "year": "July 2026",
+      "details": "CGPA: 8.8"
     },
     {
       "degree": "Credit-Linked Program in Data Science",
       "institute": "Daksh Gurukul – IIT Guwahati",
-      "year": "2026",
-      "details": "Aggregate: 92%"
+      "year": "May 2026",
+      "details": "CGPA: 9.0"
     },
     {
-      "degree": "PUC",
+      "degree": "PUC (Science)",
       "institute": "Surana Independent College, Deeksha – Kengeri",
       "year": "2022",
       "details": "Aggregate: 82%"
@@ -108,13 +229,54 @@
     }
   ],
   "certifications": [
-    {"title": "AWS Academy Machine Learning Foundations", "issuer": "AWS", "year": "2024", "link": "https://www.credly.com/badges/ea997df1-fdcf-4923-85cb-518a0fe56a5c/linked_in_profile"},
-    {"title": "AWS Academy Cloud Foundations", "issuer": "AWS", "year": "2024", "link": "https://www.credly.com/badges/1445362f-aef2-45b0-8812-637f9228b3ab/linked_in_profile"},
-    {"title": "Google Cloud Computing Foundations", "issuer": "Google", "year": "2024", "link": "https://www.credly.com/badges/839bc3c8-e92c-4d82-9476-04dca85306a3/linked_in_profile"},
-    {"title": "Data Science with Python", "issuer": "Simplilearn", "year": "2024", "link": "https://www.linkedin.com/in/diya-k-bhat-75b450257/details/certifications/"},
-    {"title": "Data Visualization: Empowering Business with Insights", "issuer": "Tata Forage", "year": "2024", "link": "https://www.linkedin.com/posts/diya-k-bhat-75b450257_data-visualization-course-tata-activity-7251216947881639937-IJ6P?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD8_eTcBAJZfPUcw1jaQOpFdMESDSjTfXIs"},
-    {"title": "Career Essentials in Generative AI", "issuer": "Microsoft & LinkedIn", "year": "2024", "link": "https://www.linkedin.com/learning/certificates/a4b1fc960a8a2b9d938f93e0796f0809d61c652c3248bdb76af408b0feb9b9e1"},
-    {"title": "Gemini in Google Workspace", "issuer": "Google Cloud Skills Boost", "year": "2024", "link": "https://example.com"}
+    {
+      "title": "Introduction to Generative AI Learning Path",
+      "issuer": "Google Cloud Skills Boost",
+      "year": "2024",
+      "link": "https://www.credly.com"
+    },
+    {
+      "title": "AWS Academy Machine Learning Foundations",
+      "issuer": "AWS",
+      "year": "2024",
+      "link": "https://www.credly.com/badges/ea997df1-fdcf-4923-85cb-518a0fe56a5c/linked_in_profile"
+    },
+    {
+      "title": "AWS Academy Cloud Foundations",
+      "issuer": "AWS",
+      "year": "2024",
+      "link": "https://www.credly.com/badges/1445362f-aef2-45b0-8812-637f9228b3ab/linked_in_profile"
+    },
+    {
+      "title": "Google Cloud Computing Foundations",
+      "issuer": "Google",
+      "year": "2024",
+      "link": "https://www.credly.com/badges/839bc3c8-e92c-4d82-9476-04dca85306a3/linked_in_profile"
+    },
+    {
+      "title": "Data Science with Python",
+      "issuer": "Simplilearn",
+      "year": "2024",
+      "link": "https://www.linkedin.com/in/diya-k-bhat-75b450257/details/certifications/"
+    },
+    {
+      "title": "Data Visualization: Empowering Business with Insights",
+      "issuer": "Tata Forage",
+      "year": "2024",
+      "link": "https://www.linkedin.com/posts/diya-k-bhat-75b450257_data-visualization-course-tata-activity-7251216947881639937-IJ6P?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD8_eTcBAJZfPUcw1jaQOpFdMESDSjTfXIs"
+    },
+    {
+      "title": "Career Essentials in Generative AI",
+      "issuer": "Microsoft & LinkedIn",
+      "year": "2024",
+      "link": "https://www.linkedin.com/learning/certificates/a4b1fc960a8a2b9d938f93e0796f0809d61c652c3248bdb76af408b0feb9b9e1"
+    },
+    {
+      "title": "Gemini in Google Workspace",
+      "issuer": "Google Cloud Skills Boost",
+      "year": "2024",
+      "link": "https://example.com"
+    }
   ],
   "publications": [
     {
@@ -130,14 +292,42 @@
     }
   ],
   "extracurriculars": [
-    {"role": "Assistant Editor", "activity": "JITIMES College Magazine"},
-    {"role": "Student Placement Coordinator", "activity": "Coordinated Placement Drives at JIT"},
-    {"role": "Campus Ambassador", "activity": "GirlScript Summer of Code 2025"},
-    {"role": "LinkedIn Profile Manager", "activity": "Girls leading Tech"},
-    {"role": "Documentation Lead", "activity": "AI Nexus Club"},
-    {"role": "Social Media Lead", "activity": "HackAura Global Hackathon"},
-    {"role": "Python workshop instructor", "activity": "JIT"},
-    {"role": "Master of Ceremonnies", "activity": "JIT"}
+    {
+      "role": "Assistant Editor",
+      "activity": "JITIMES College Magazine"
+    },
+    {
+      "role": "Student Placement Coordinator",
+      "activity": "Coordinated Placement Drives at JIT"
+    },
+    {
+      "role": "Campus Ambassador",
+      "activity": "GirlScript Summer of Code 2025"
+    },
+    {
+      "role": "LinkedIn Profile Manager",
+      "activity": "Girls Leading Tech"
+    },
+    {
+      "role": "Documentation Lead",
+      "activity": "AI Nexus Club"
+    },
+    {
+      "role": "Social Media Lead",
+      "activity": "HackAura Global Hackathon"
+    },
+    {
+      "role": "Python Workshop Instructor",
+      "activity": "JIT"
+    },
+    {
+      "role": "Master of Ceremonies",
+      "activity": "JIT"
+    },
+    {
+      "role": "2nd Place – CSI Project Exhibition",
+      "activity": "Led a project team to secure 2nd place"
+    }
   ],
   "contact": {
     "email": "diyakbhat29012004@gmail.com",
