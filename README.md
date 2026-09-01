@@ -237,6 +237,4 @@ For issues or questions:
 2. Review the Next.js documentation
 3. Consult Tailwind CSS docs for styling
 
-## License
 
-This project is open source and available under the MIT License.
