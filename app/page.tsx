@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
-import { Code2, Cpu, Database, BookOpen, Award, Users, Briefcase } from 'lucide-react'
+import { Cpu, Database, BookOpen, Award, Users, Briefcase, Eye, BrainCircuit } from 'lucide-react'
 
 import NavBar from '../components/NavBar'
 import Hero from '../components/Hero'
@@ -164,9 +164,9 @@ export default function Home() {
                 transition={{ duration: 0.6, delay: 0.1 }}
                 whileHover={{ scale: 1.02, y: -4 }}
               >
-                <Code2 className="w-12 h-12 text-blue-400 mx-auto mb-4" />
-                <h3 className="text-xl font-bold mb-4 text-blue-400">Frontend Development</h3>
-                <p className="text-gray-300">Creating responsive and interactive user interfaces with modern frameworks</p>
+                <BrainCircuit className="w-12 h-12 text-blue-400 mx-auto mb-4" />
+                <h3 className="text-xl font-bold mb-4 text-blue-400">AI & ML with GenAI & RAG</h3>
+                <p className="text-gray-300">Building intelligent systems with LLMs, RAG pipelines, agentic AI workflows, and machine learning models</p>
               </motion.div>
 
               <motion.div
@@ -176,9 +176,9 @@ export default function Home() {
                 transition={{ duration: 0.6, delay: 0.2 }}
                 whileHover={{ scale: 1.02, y: -4 }}
               >
-                <Cpu className="w-12 h-12 text-blue-400 mx-auto mb-4" />
-                <h3 className="text-xl font-bold mb-4 text-blue-400">AI & Machine Learning</h3>
-                <p className="text-gray-300">Building intelligent systems with machine learning and deep learning techniques</p>
+                <Database className="w-12 h-12 text-blue-400 mx-auto mb-4" />
+                <h3 className="text-xl font-bold mb-4 text-blue-400">Data Science</h3>
+                <p className="text-gray-300">Extracting insights from data using statistical analysis, predictive modeling, and interactive visualizations</p>
               </motion.div>
 
               <motion.div
@@ -188,9 +188,9 @@ export default function Home() {
                 transition={{ duration: 0.6, delay: 0.3 }}
                 whileHover={{ scale: 1.02, y: -4 }}
               >
-                <Database className="w-12 h-12 text-blue-400 mx-auto mb-4" />
-                <h3 className="text-xl font-bold mb-4 text-blue-400">Data Science</h3>
-                <p className="text-gray-300">Extracting insights from data using statistical analysis and visualization</p>
+                <Eye className="w-12 h-12 text-blue-400 mx-auto mb-4" />
+                <h3 className="text-xl font-bold mb-4 text-blue-400">Computer Vision</h3>
+                <p className="text-gray-300">Building real-time object detection and image processing systems using YOLOv8, OpenCV, and deep learning</p>
               </motion.div>
             </div>
           </div>
